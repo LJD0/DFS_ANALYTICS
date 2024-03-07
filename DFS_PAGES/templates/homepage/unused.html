@@ -1,0 +1,19 @@
+{% extends "homepage/base/base.html" %}
+
+
+{% load static %}
+{% block content %}
+  <main id="main">
+
+    {% include "homepage/elements/values.html" %}
+    {% include "homepage/elements/counts.html" %}
+    {% include "homepage/elements/services.html" %}
+    {% include "homepage/elements/pricing.html" %}
+    {% include "homepage/elements/portfolio.html" %}
+    {% include "homepage/elements/team.html" %}
+    {% include "homepage/elements/clients.html" %}
+    {% include "homepage/elements/blog.html" %}
+
+
+  </main><!-- End #main -->
+  {% endblock content %}

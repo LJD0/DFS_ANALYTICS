@@ -1,0 +1,37 @@
+{% load static %}
+    <!-- ======= F.A.Q Section ======= -->
+    <section id="faq" class="faq">
+
+        <div class="container" data-aos="fade-up">
+  
+          <header class="section-header">
+            <h2>F.A.Q</h2>
+            <p>Frequently Asked Questions</p>
+          </header>
+  
+            <div class="col-lg-12">
+              <!-- F.A.Q List 1-->
+              <div class="accordion accordion-flush" id="faqlist1">
+                {% for faq in faqs %}
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1">
+                      {{faq.question}}
+                    </button>
+                  </h2>
+                  <div id="faq-content-{{faq.id}}" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                    <div class="accordion-body">
+                      {{faq.answer}}
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+  
+            
+  
+        </div>
+  
+      </section><!-- End F.A.Q Section -->
+  
