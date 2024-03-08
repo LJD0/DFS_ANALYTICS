@@ -28,13 +28,18 @@ DEBUG = False
 ALLOWED_HOSTS = [
     # '127.0.0.1',
     # 'localhost',
-    'dfs-analytics.com',
+    'dfsanalytics.co',
+    'www.dfsanalytics.co',
+    'dfs-analytics.co,',
     'www.dfs-analytics.com',
 ]
 CSRF_TRUSTED_ORIGINS = [
     # 'http://localhost:8000',
     # 'http://localhost:5085',
     # 'http://127.0.0.1',
+    'dfsanalytics.co',
+    'www.dfsanalytics.co',
+    'dfsanalytics.co',
     'dfs-analytics.com',
     'www.dfs-analytics.com',
     ]
