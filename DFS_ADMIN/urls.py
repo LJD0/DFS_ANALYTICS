@@ -1,5 +1,5 @@
 from django.urls import path
-from admin_soft import views
+from DFS_ADMIN import views
 from django.contrib.auth import views as auth_views
 
 
