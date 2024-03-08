@@ -1,4 +1,4 @@
-{% load static %}
+{% load static admin_soft %}
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">
 
@@ -8,19 +8,26 @@
             <h2>Testimonials</h2>
             <p>What they are saying about us</p>
           </header>
-  
+          <div class="btn-box text-center justify-content-center">
+            <a href="{% url 'new_testimonial' %}" class="test-btn d-inline-flex align-items-center justify-content-center align-self-center">
+              <span>Leave us a review</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+          
           <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="200">
             <div class="swiper-wrapper">
-              
               {% for testimonial in testimonials %}
               {% if testimonial.on_homepage%}
               <div class="swiper-slide">
                 <div class="testimonial-item">
                   <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    {% for i in testimonial.stars|get_range %}
+                    <i class="bi bi-star-fill"></i>
+                    {% endfor %}
                   </div>
                   <p>
-                    Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                    {{testimonial.review}}
                   </p>
                   <div class="profile mt-auto">
                     {% if testimonial.image %}

@@ -1,0 +1,123 @@
+{% load static %}
+<!-- ======= new-testimonial Section ======= -->
+<section id="new-testimonial" class="new-testimonial">
+    <div class="container" data-aos="fade-up">
+        <header class="section-header">
+            <h2>Leave a review</h2>
+            <p>Let us and others know how we're doing.</p>
+        </header>
+
+        <div class="row gy-4">
+            
+                <div class="row gy-4">
+                <form
+                    action="{% url 'new_testimonial' %}"
+                    method="post"
+                    role="form"
+                    class="php-email-form">
+                    {% csrf_token %}
+                    <div class="row gy-4">
+                        <div class="col-md-6">
+                            <input
+                                type="text"
+                                name="name"
+                                class="form-control"
+                                placeholder="Your Name"
+                                required />
+                        </div>
+
+                        <div class="col-md-6">
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="job_title"
+                                placeholder="Your Title"
+                                required />
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="info-item d-flex">
+                                <select name="topic" class="form-control" required>
+                                    <option value="" disabled selected>How did we help you?</option>
+                                    <option value="1">Cost Analysis</option>
+                                    <option value="2">Inventory</option>
+                                    <option value="3">Marketing</option>
+                                    <option value="4">Other</option>
+                                </select>
+                                
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="info-item d-flex">
+                                <select name="stars" class="form-control" required>
+                                    <option value="" disabled selected>Select your rating</option>
+                                    <option value="1">1 Star</option>
+                                    <option value="2">2 Stars</option>
+                                    <option value="3">3 Stars</option>
+                                    <option value="4">4 Stars</option>
+                                    <option value="5">5 Stars</option>
+                                </select>
+                                
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <textarea
+                                class="form-control"
+                                name="message"
+                                rows="6"
+                                placeholder="Message"
+                                required></textarea>
+                        </div>
+
+                        <div class="col-md-12 text-center">
+                            {% comment %} <div class="loading">Loading</div>
+                            <div class="error-message"></div>{% endcomment %}
+                            <div class="sent-message">
+                                Your message has been sent. Thank you!
+                            </div> 
+
+                            <button type="submit">Leave your review</button>
+                        </div>
+                    </div>
+                </form>
+                    {% comment %}
+                    <div class="col-md-6">
+                        <div class="info-box">
+                            <i class="bi bi-geo-alt"></i>
+                            <h3>Address</h3>
+                            <p>A108 Adam Street,<br />New York, NY 535022</p>
+                        </div>
+                    </div>
+                    {% for new-testimonial in new-testimonial_info %}
+                    <div class="col-md-12">
+                        <div class="info-box">
+                            <i class="bi bi-telephone"></i>
+                            <h3>Call Us</h3>
+                            <p>{{new-testimonial.phone}}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="info-box">
+                            <i class="bi bi-envelope"></i>
+                            <h3>Email Us</h3>
+                            <p>{{new-testimonial.email}}</p>
+                        </div>
+                    </div>
+                    {% endfor %} 
+                    <div class="col-md-6">
+                        <div class="info-box">
+                            <i class="bi bi-clock"></i>
+                            <h3>Open Hours</h3>
+                            <p>Monday - Friday<br />9:00AM - 05:00PM</p>
+                        </div>
+                    </div>
+                    {% endcomment %}
+                </div>
+
+
+        </div>
+    </div>
+</section>
+<!-- End new-testimonial Section -->

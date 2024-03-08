@@ -4,7 +4,7 @@
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
       <a href="/" class="logo d-flex align-items-center">
-        <img src="{% static 'assets/img/dfs_small_black.png' %}" alt="">
+        <img src="{% static 'assets/img/DFS_noBG.png' %}" alt="">
         {% comment %} <span>DFS Analytics</span> {% endcomment %}
       </a>
 
@@ -61,17 +61,16 @@
           </li> {% endcomment %}
           <li><a class="nav-link scrollto active" href="#team">Our Team</a></li>
 
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="#about">About us</a></li>
+          {% comment %} <li><a class="nav-link scrollto" href="#contact">Contact</a></li> {% endcomment %}
+          <li><a class="getstarted scrollto" href="#about">Contact Us</a></li>
           {% else %}
-          <li><a class="nav-link scrollto active" href="#values">values</a></li>
-          <li><a class="nav-link scrollto" href="#counts">counts</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto" href="#pricing">pricing</a></li>
-          <li><a class="nav-link scrollto" href="#portfolio">portfolio</a></li>
-          <li><a class="nav-link scrollto active" href="#team">Home</a></li>
-          <li><a class="nav-link scrollto" href="#clients">clients</a></li>
-          <li><a class="nav-link scrollto" href="#blog">blog</a></li>
+          <li><a class="nav-link scrollto active" href="{% url 'home' %}#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'home' %}#about">About</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'home' %}#features">Services</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'home' %}#faq">F.A.Q.</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'home' %}#testimonials">Testimonials</a></li>
+          <li><a class="nav-link scrollto active" href="{% url 'home' %}#team">Our Team</a></li>
+          <li><a class="getstarted scrollto" href="{% url 'contact' %}">Contact Us</a></li>
           {% endif %}
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

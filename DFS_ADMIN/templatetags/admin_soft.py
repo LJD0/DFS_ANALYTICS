@@ -84,3 +84,13 @@ def sum_number(value, number):
 @register.filter
 def neg_num(value, number):
     return value - number
+
+@register.filter
+def get_range(value):
+    try:
+        if value is str:
+            value = int(value)
+        return range(value)
+    except:
+        value = 10        
+        return range(value)

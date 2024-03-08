@@ -53,15 +53,16 @@ class Testimonials(models.Model):
     )
     full_name = models.CharField(max_length=100)
     job_title = models.CharField(max_length=100)
-    review = models.TextField()
     stars = models.IntegerField(default=5,choices=RATINGS)
+    topic = models.CharField(max_length=100, blank=True)
+    review = models.TextField()
     # image = models.ImageField(upload_to='testimonials/', blank=True)
     on_homepage = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
 
     def __str__(self):
-        return self.name
+        return self.full_name
 
 class Features(models.Model):
     name = "Features"
