@@ -33,9 +33,84 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   {% include "homepage/base/scripts.html" %}
+{% if messages %}
+    {% if message.tags == 'success' and 'contact' in message.extra_tags %}
+      <script>
+        $(document).ready(function(){
+          $("#contactModal").modal('show');
+        });
+      </script>
+    {% endif %}
+    {% if message.tags == 'success' and 'testimonial' in message.extra_tags %}
+      <script>
+        $(document).ready(function(){
+          $("#testimonialModal").modal('show');
+        });
+      </script>
+    {% endif %}
+ {% endif %}
+
+    <!-- Modal -->
+  <div class="modal fade" id="testimonialModal" tabindex="-1" aria-labelledby="testimonialModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-center">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <div class="justify-content-center">
+            <h6 class="modal-title" id="testimonialModalLabel">Your review was submitted successfully.</h6>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body text-center">
+          <div class="text-center tmt-3">
+            <i class="far fa-check-circle fa-6x" style="color: #a5dc86"></i>
+          </div>
+          <br>
+          <div class="mb3"><strong>Thanks for leaving your feedback</strong></div>
+            <h6 style="font-size: 12px;">Our team and clients appreciate your time.</h6>
+        </div> <!-- end modal-body-->
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="width: 65px;">Close</button>
+        </div> <!-- end modal-footer-->
+
+      </div> <!-- end modal-content-->
+    </div> <!-- end modal-dialog-->
+  </div> <!-- end modal-->
+
+    <!-- Modal -->
+  <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-center">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <div class="justify-content-center">
+            <h6 class="modal-title" id="contactModalLabel">Your message was sent successfully.</h6>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body text-center">
+          <div class="text-center tmt-3">
+            <i class="far fa-check-circle fa-6x" style="color: #a5dc86"></i>
+          </div>
+          <br>
+          <div class="mb3"><strong>Thanks for getting in touch with us!</strong></div>
+            <h6 style="font-size: 12px;">We look forward to working with you.</h6>
+        </div> <!-- end modal-body-->
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="width: 65px;">Close</button>
+        </div> <!-- end modal-footer-->
+
+      </div> <!-- end modal-content-->
+    </div> <!-- end modal-dialog-->
+  </div> <!-- end modal-->
+
 
 </body>
 
 </html>
 
-<div class="IFuOkc" style="background-position: center center; background-image: url(); background-size: cover;" jsname="LQX2Vd"></div>
+<!--<div class="IFuOkc" style="background-position: center center; background-image: url(); background-size: cover;" jsname="LQX2Vd"></div>-->

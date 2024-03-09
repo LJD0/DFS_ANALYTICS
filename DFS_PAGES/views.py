@@ -29,7 +29,7 @@ def contact (request):
         contact.message = request.POST['message']
         contact.save()
 
-        messages.success(request,'Thank You')  # Add success message
+        messages.success(request,'Thank You', extra_tags='contact',)  # Add success message
 
             # # Send email using Django's email function
         # send_mail(
@@ -41,7 +41,7 @@ def contact (request):
         # )
         return HttpResponseRedirect("/")
     else:
-        return render(request, 'homepage/elements/contact_page.html', context)  
+        return render(request, 'homepage/elements/contact_page.html', context)
 
 def new_review (request):
 
@@ -57,7 +57,7 @@ def new_review (request):
         testimonial.review = request.POST['message']
         testimonial.save()
 
-        messages.success(request,'Thank You')  # Add success message
+        messages.success(request,'Thank You', extra_tags='testimonial',)  # Add success message
 
             # # Send email using Django's email function
         # send_mail(
@@ -69,4 +69,4 @@ def new_review (request):
         # )
         return HttpResponseRedirect("/")
     else:
-        return render(request, 'homepage/elements/testimonials_page.html', context)  
+        return render(request, 'homepage/elements/testimonials_page.html', context)
