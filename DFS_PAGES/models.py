@@ -85,6 +85,8 @@ class Features(models.Model):
     growth_tab1_blurb2 = models.CharField(max_length=500)
     growth_tab1_title2 = models.CharField(max_length=100)
     growth_tab1_blurb3 = models.CharField(max_length=500)
+    growth_tab1_title3 = models.CharField(max_length=100, blank=True)
+    growth_tab1_blurb4 = models.CharField(max_length=500, blank=True)
 
     growth_tab2_name = models.CharField(max_length=100)
     growth_tab2_blurb1 = models.CharField(max_length=500)
@@ -92,6 +94,8 @@ class Features(models.Model):
     growth_tab2_blurb2 = models.CharField(max_length=500)
     growth_tab2_title2 = models.CharField(max_length=100)
     growth_tab2_blurb3 = models.CharField(max_length=500)
+    growth_tab2_title3 = models.CharField(max_length=100, blank=True)
+    growth_tab2_blurb4 = models.CharField(max_length=500, blank=True)
 
     growth_tab3_name = models.CharField(max_length=100)
     growth_tab3_blurb1 = models.CharField(max_length=500)
@@ -99,7 +103,7 @@ class Features(models.Model):
     growth_tab3_blurb2 = models.CharField(max_length=500)
     growth_tab3_title2 = models.CharField(max_length=100)
     growth_tab3_blurb3 = models.CharField(max_length=500)
-    
+     
 
     tools_title = models.CharField(max_length=100)
     tools_image = models.ImageField(upload_to='')

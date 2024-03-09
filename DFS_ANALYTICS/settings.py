@@ -23,25 +23,25 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-(z3ud+k2aedw4ii(jj*!57$(fd1@^)+o2*whom9nfj=utn-l14"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
-    # '127.0.0.1',
-    # 'localhost',
+    '127.0.0.1',
+    'localhost',
     'dfsanalytics.co',
     'www.dfsanalytics.co',
     'dfs-analytics.co,',
     'www.dfs-analytics.com',
 ]
 CSRF_TRUSTED_ORIGINS = [
-    # 'http://localhost:8000',
-    # 'http://localhost:5085',
-    # 'http://127.0.0.1',
-    'dfsanalytics.co',
-    'www.dfsanalytics.co',
-    'dfsanalytics.co',
-    'dfs-analytics.com',
-    'www.dfs-analytics.com',
+    'http://localhost:8000',
+    'http://localhost:5085',
+    'http://127.0.0.1',
+    'http://dfsanalytics.co',
+    'http://www.dfsanalytics.co',
+    'http://dfsanalytics.co',
+    'http://dfs-analytics.com',
+    'http://www.dfs-analytics.com',
     ]
 
 # Application definition
@@ -136,10 +136,10 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 # static files
-STATIC_ROOT = os.path.join(BASE_DIR, "static",)
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, "static",)
-# ]
+# STATIC_ROOT = os.path.join(BASE_DIR, "static",)
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static",)
+]
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static', "media")
