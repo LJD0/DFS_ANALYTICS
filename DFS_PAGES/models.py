@@ -31,7 +31,7 @@ class Hero(models.Model):
     def __str__(self):
         return self.name
 
-    
+
 class AboutUs(models.Model):
     name = "About Us"
     tag = models.CharField(default=None, max_length=100)
@@ -42,7 +42,7 @@ class AboutUs(models.Model):
 
     def __str__(self):
         return self.name
-    
+
 class Testimonials(models.Model):
     RATINGS = (
         (1, 1),
@@ -103,7 +103,7 @@ class Features(models.Model):
     growth_tab3_blurb2 = models.CharField(max_length=500)
     growth_tab3_title2 = models.CharField(max_length=100)
     growth_tab3_blurb3 = models.CharField(max_length=500)
-     
+
 
     tools_title = models.CharField(max_length=100)
     tools_image = models.ImageField(upload_to='')
@@ -135,15 +135,16 @@ class OurTeam(models.Model):
 
     def __str__(self):
         return self.name
-    
+
 class FAQ(models.Model):
     question = models.CharField(max_length=100)
     answer = models.TextField()
     id = models.AutoField(primary_key=True)
     def __str__(self):
         return self.question
-    
+
 class Contact_Forms(models.Model):
+    name = models.CharField(max_length=100,blank=True)
     full_name = models.CharField(max_length=100)
     email = models.CharField(max_length=100)
     subject = models.CharField(max_length=100)
@@ -151,7 +152,7 @@ class Contact_Forms(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.name
+        return self.full_name
 
 class Contact_Info(models.Model):
     name = "DFS Analytics"
