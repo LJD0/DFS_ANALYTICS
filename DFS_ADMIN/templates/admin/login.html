@@ -14,13 +14,13 @@
               <div class="card card-plain mt-8">
                 <div class="card-header pb-0 text-left bg-transparent">
                   <h3 class="font-weight-bolder text-info text-gradient">
-                    Sign IN  
+                    DFS Analytics Admin 
                   </h3>
                   <p class="mb-0">
                     {% if msg %}
                       <span class="text-danger">{{ msg | safe }}</span>
                     {% else %}
-                      Add your credentials
+                      Sign in Below
                     {% endif %}                      
                   </p>
                 </div>
@@ -69,7 +69,7 @@
     </section>
   </main>
 
-  {% include 'includes/footer-fullscreen.html' %}
+  {% comment %} {% include 'includes/footer-fullscreen.html' %} {% endcomment %}
 
 {% endblock content %}
 
