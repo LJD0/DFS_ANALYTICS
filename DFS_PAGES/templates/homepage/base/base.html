@@ -33,22 +33,27 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   {% include "homepage/base/scripts.html" %}
+
+
 {% if messages %}
-    {% if message.tags == 'success' and 'contact' in message.extra_tags %}
-      <script>
-        $(document).ready(function(){
-          $("#contactModal").modal('show');
-        });
-      </script>
-    {% endif %}
-    {% if message.tags == 'success' and 'testimonial' in message.extra_tags %}
-      <script>
-        $(document).ready(function(){
-          $("#testimonialModal").modal('show');
-        });
-      </script>
-    {% endif %}
- {% endif %}
+    {% for message in messages %}
+        {% if message.tags == 'success' and 'contact' in message.extra_tags %}
+            <script>
+                $(document).ready(function(){
+                    $("#contactModal").modal('show');
+                });
+            </script>
+        {% endif %}
+        {% if message.tags == 'success' and 'testimonial' in message.extra_tags %}
+            <script>
+                $(document).ready(function(){
+                    $("#testimonialModal").modal('show');
+                });
+            </script>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
 
     <!-- Modal -->
   <div class="modal fade" id="testimonialModal" tabindex="-1" aria-labelledby="testimonialModalLabel" aria-hidden="true">
