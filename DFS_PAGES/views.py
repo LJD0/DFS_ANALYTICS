@@ -70,3 +70,9 @@ def new_review (request):
         return HttpResponseRedirect("/")
     else:
         return render(request, 'homepage/elements/testimonials_page.html', context)
+
+
+def expo_west (request):
+    context = {
+    }
+    return render(request, 'expo/expo_page.html', context)

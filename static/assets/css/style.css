@@ -2593,3 +2593,83 @@ section {
     transform: rotate(360deg);
   }
 }
+
+
+/*--------------------------------------------------------------
+# expo Section
+--------------------------------------------------------------*/
+#expo {
+  width: 100%;
+  height: 100vh;
+  padding: 0 0 0 0;
+  background: #ffffff;
+  /* background: linear-gradient(180deg, #213b52 0%, rgb(33, 60, 84) 35%, rgb(32, 69, 100) 100%); */
+}
+
+#expo h1 {
+  margin: 0 0 15px 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  color: #5fabf1;
+  font-family: "Poppins", sans-serif;
+}
+
+#expo h2 {
+  color: #5fabf1;
+  margin-bottom: 30px;
+  font-size: 22px;
+}
+
+#expo .btn-get-started {
+  color: #fff;
+  border-radius: 50px;
+  padding: 8px 35px 10px 35px;
+  border: 2px solid #4154f1;
+  transition: all ease-in-out 0.3s;
+  display: inline-block;
+  background: #4154f1;
+}
+
+#expo .btn-get-started:hover {
+  background: transparent;
+  color: #213b52;
+}
+
+@media (max-width: 991px) {
+  #expo .expo-img {
+    text-align: center;
+  }
+
+  #expo .expo-img img {
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  #expo {
+    -moz-text-align-last: center;
+    text-align-last: center;
+  }
+
+  #expo h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  #expo h2 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+
+  #expo .expo-img img {
+    width: 70%;
+  }
+}
+
+@media (max-width: 575px) {
+  #expo .expo-img img {
+    width: 80%;
+  }
+}
