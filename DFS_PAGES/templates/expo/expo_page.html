@@ -3,15 +3,10 @@
 
 {% load static %}
 {% block content %}
-<br> <br> <br>
-<br> <br> <br>
-<br>
-<br>
 
 {% include "expo/expo.html" %}
   <main id="main">
-  <div data-aos='fade-down'>
-    {% include "homepage/elements/contact.html" %}
-  </div>
+    {% include "expo/expo_form.html" %}
+
   </main><!-- End #main -->
   {% endblock content %}

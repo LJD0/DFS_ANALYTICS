@@ -5,7 +5,7 @@
     <div class="container" data-aos="fade-up">
 
       <header class="section-header">
-        <h2>{{feature.services_tag}}</h2>
+        {% comment %} <h2>{{feature.services_tag}}</h2> {% endcomment %}
         <p>{{feature.services_title}}</p>
       </header>
 
@@ -78,9 +78,11 @@
             <li>
               <a class="nav-link" data-bs-toggle="pill" href="#tab2">{{feature.growth_tab2_name}}</a>
             </li>
+            {% if tab3 %}
             <li>
               <a class="nav-link" data-bs-toggle="pill" href="#tab3">{{feature.growth_tab3_name}}</a>
             </li>
+            {% endif %}
           </ul><!-- End Tabs -->
 
           <!-- Tab Content -->
@@ -126,6 +128,7 @@
               <p>{{feature.growth_tab2_blurb4}}</p>
             </div><!-- End Tab 2 Content -->
 
+            {% if tab3 %}
             <div class="tab-pane fade show" id="tab3">
               <p>{{feature.growth_tab3_blurb1}}</p>
               <div class="d-flex align-items-center mb-2">
@@ -140,13 +143,13 @@
               <p>{{feature.growth_tab3_blurb3}}</p>
               
             </div><!-- End Tab 3 Content -->
-
+            {% endif %}
           </div>
 
         </div>
-
+        <br>
         <div class="col-lg-6">
-          <img src="{{feature.growth_image.url}}" class="img-fluid" alt="">
+          <img style='width:75%;' src="{{feature.growth_image.url}}" class="img-fluid p-4" alt="">
         </div>
 
       </div><!-- End Feature Tabs -->
@@ -158,9 +161,9 @@
         <div class="row">
 
           <div class="col-xl-4 text-center" data-aos="fade-right" data-aos-delay="100">
-            <img src="{{feature.tools_image.url}}" class="img-fluid p-4" alt="">
+            <img style='width:100%;' src="{{feature.tools_image.url}}" class="img-fluid" alt="">
           </div>
-
+          <br>
           <div class="col-xl-8 d-flex content">
             <div class="row align-self-center gy-4">
 

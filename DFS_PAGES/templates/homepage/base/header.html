@@ -14,8 +14,8 @@
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#features">Services</a></li>
-          <li><a class="nav-link scrollto" href="#faq">F.A.Q.</a></li>
-          <li><a class="nav-link scrollto" href="#testimonials">Testimonials</a></li>
+          {% comment %} <li><a class="nav-link scrollto" href="#faq">F.A.Q.</a></li> {% endcomment %}
+          {% comment %} <li><a class="nav-link scrollto" href="#testimonials">Testimonials</a></li> {% endcomment %}
           {% comment %} <li><a href="blog.html">Blog</a></li>
           <li class="dropdown"><a href="#"><span>Unused elements</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -59,7 +59,7 @@
               </li>
             </ul>
           </li> {% endcomment %}
-          <li><a class="nav-link scrollto active" href="#team">Our Team</a></li>
+          {% comment %} <li><a class="nav-link scrollto active" href="#team">Our Team</a></li> {% endcomment %}
 
           {% comment %} <li><a class="nav-link scrollto" href="#contact">Contact</a></li> {% endcomment %}
           <li><a class="getstarted scrollto" href="#contact">Contact Us</a></li>
@@ -67,9 +67,9 @@
           <li><a class="nav-link scrollto active" href="{% url 'home' %}#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="{% url 'home' %}#about">About</a></li>
           <li><a class="nav-link scrollto" href="{% url 'home' %}#features">Services</a></li>
-          <li><a class="nav-link scrollto" href="{% url 'home' %}#faq">F.A.Q.</a></li>
-          <li><a class="nav-link scrollto" href="{% url 'home' %}#testimonials">Testimonials</a></li>
-          <li><a class="nav-link scrollto active" href="{% url 'home' %}#team">Our Team</a></li>
+          {% comment %} <li><a class="nav-link scrollto" href="{% url 'home' %}#faq">F.A.Q.</a></li> {% endcomment %}
+          {% comment %} <li><a class="nav-link scrollto" href="{% url 'home' %}#testimonials">Testimonials</a></li> {% endcomment %}
+          {% comment %} <li><a class="nav-link scrollto active" href="{% url 'home' %}#team">Our Team</a></li> {% endcomment %}
           <li><a class="getstarted scrollto" href="{% url 'contact' %}">Contact Us</a></li>
           {% endif %}
         </ul>

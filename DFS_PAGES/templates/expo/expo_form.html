@@ -1,64 +1,16 @@
 {% load static %}
-<!-- ======= Contact Section ======= -->
-<section id="contact" class="contact">
+<!-- ======= expo_form Section ======= -->
+<section id="expo_form" class="expo_form">
     <div class="container" data-aos="fade-up">
 
         <header class="section-header">
-            {% comment %} <h2>Contact</h2> {% endcomment %}
-            <p>Contact Us</p>
+            {% comment %} <h2>expo_form</h2> {% endcomment %}
+            <p>We look forward to working with you</p>
         </header>
 
         <div class="row gy-4">
-
-            <div style="" class="col-lg-5">
-
-                <div class="row gy-4">
-                    {% comment %}
-                    <div class="col-md-6">
-                        <div class="info-box">
-                            <i class="bi bi-geo-alt"></i>
-                            <h3>Address</h3>
-                            <p>A108 Adam Street,<br />New York, NY 535022</p>
-                        </div>
-                    </div>
-                    {% endcomment %} {% for contact in contact_info %}
-                    <div class="col-md-6">
-                        <a href="tel:{{contact.phone}}">
-                            <div class="info-box">
-                                <i class="bi bi-telephone"></i>
-                                <h3>Call Us</h3>
-                                <p>{{contact.phone}}</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-6">
-                        <a href="mailto:{{contact.email}}">
-                            <div class="info-box">
-                                <i class="bi bi-envelope"></i>
-                                <h3>Email Us</h3>
-                                <p>{{contact.email}}</p>
-                            </div>
-                        </a>
-                    </div>
-                    {% endfor %}
-                </div> {% comment "end email phone row" %}{% endcomment %}
-                <br />
-                <div style='height:100%;' class="row">
-                    <div class="col-md-12">
-                        <div class="info-box">
-                            <h3>Want to leave some feedback?</h3>
-                            <h3>We would love to hear what you think.</h3>
-                            <a
-                                href="{% url 'new_testimonial' %}"
-                                class="test-btn d-inline-flex align-items-center justify-content-center align-self-center">
-                                <span>Leave us a review</span>
-                            </a>
-                        </div> {% comment "end " %}{% endcomment %}
-                    </div> {% comment "end col" %}{% endcomment %}
-                </div> {% comment "end row" %}{% endcomment %}
-            </div> {% comment "end contact info col" %} {% endcomment %}
-
-            <div class="col-lg-7">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
                 <form
                     action="{% url 'contact' %}"
                     method="post"
@@ -115,7 +67,8 @@
                     </div>
                 </form>
             </div> {% comment "end form col" %}{% endcomment %}
+            <div class="col-lg-2"></div>
         </div> {% comment "end row main" %}{% endcomment %}
     </div> {% comment "end container" %}{% endcomment %}
 </section>
-<!-- End Contact Section -->
+<!-- End expo_form Section -->
