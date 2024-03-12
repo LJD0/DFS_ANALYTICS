@@ -54,7 +54,7 @@ class Testimonials(models.Model):
     full_name = models.CharField(max_length=100)
     job_title = models.CharField(max_length=100)
     stars = models.IntegerField(default=5,choices=RATINGS)
-    topic = models.CharField(max_length=100, blank=True)
+    company = models.CharField(max_length=100, blank=True)
     review = models.TextField()
     # image = models.ImageField(upload_to='testimonials/', blank=True)
     on_homepage = models.BooleanField(default=False)
@@ -159,5 +159,19 @@ class Contact_Info(models.Model):
     # address = models.CharField(max_length=100)
     phone = models.CharField(max_length=100)
     email = models.CharField(max_length=100)
+    def __str__(self):
+        return self.name
+
+
+class expo_info(models.Model):
+    name = "Expo Info"
+    page_title = models.CharField(max_length=100)
+    page_subtitle = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='')
+    button = models.CharField(max_length=100)
+    video_link = models.CharField(max_length=200)
+    video_title = models.CharField(max_length=100)
+    video_subtitle = models.CharField(max_length=100)
+
     def __str__(self):
         return self.name

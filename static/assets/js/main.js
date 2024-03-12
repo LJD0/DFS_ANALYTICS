@@ -227,6 +227,59 @@
   const portfolioLightbox = GLightbox({
     selector: '.portfokio-lightbox'
   });
+  
+//   // Update the lightbox initialization to target the new class
+// const contactFormLightbox = GLightbox({
+//   selector: '.contact-form-trigger',
+//   touchNavigation: true,
+//   loop: true,
+//   onOpen: function() {
+//     // Load HTML content when the lightbox opens
+//     const contentUrl = this.href;
+//     fetch(contentUrl)
+//       .then(response => response.text())
+//       .then(htmlContent => {
+//         // Assuming you have an element with ID 'lightbox-content' to replace
+//         document.getElementById('lightbox-content').innerHTML = htmlContent;
+//       });
+//   }
+// });
+
+
+// const lightbox = GLightbox({
+//   plyr: {
+//     css: 'https://cdn.plyr.io/3.5.6/plyr.css', // Default not required to include
+//     js: 'https://cdn.plyr.io/3.5.6/plyr.js', // Default not required to include
+//     config: {
+//       ratio: '16:9', // or '4:3'
+//       muted: false,
+//       hideControls: true,
+//       youtube: {
+//         noCookie: true,
+//         rel: 0,
+//         showinfo: 0,
+//         iv_load_policy: 3
+//       },
+//       vimeo: {
+//         byline: false,
+//         portrait: false,
+//         title: false,
+//         speed: true,
+//         transparent: false
+//       }
+//     }
+//   }
+// });
+
+
+
+
+
+
+
+
+
+
 
   /**
    * Portfolio details slider

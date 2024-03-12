@@ -3,7 +3,7 @@ from django.contrib.admin import AdminSite
 
 from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin
-from DFS_PAGES.models import Hero, AboutUs, Testimonials, Features, OurTeam, FAQ, Contact_Forms, Contact_Info
+from DFS_PAGES.models import Hero, AboutUs, Testimonials, Features, OurTeam, FAQ, Contact_Forms, Contact_Info, expo_info
 # Register your models here.
 
 class DFS_AdminSite(AdminSite):
@@ -35,5 +35,6 @@ dfs_admin.register(OurTeam)
 dfs_admin.register(FAQ)
 dfs_admin.register(Contact_Forms, Contact_FormsAdmin)
 dfs_admin.register(Contact_Info)
+dfs_admin.register(expo_info)
 
 
