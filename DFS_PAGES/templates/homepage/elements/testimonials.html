@@ -5,15 +5,14 @@
         <div class="container" data-aos="fade-up">
   
           <header class="section-header">
-            <h2>Testimonials</h2>
-            <p>What they are saying about us</p>
+            <p>See what our clients have to say</p>
           </header>
-          <div class="btn-box text-center justify-content-center">
+          {% comment %} <div class="btn-box text-center justify-content-center">
             <a href="{% url 'new_testimonial' %}" class="test-btn d-inline-flex align-items-center justify-content-center align-self-center">
               <span>Leave us a review</span>
               <i class="bi bi-arrow-right"></i>
             </a>
-          </div>
+          </div> {% endcomment %}
           
           <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="200">
             <div class="swiper-wrapper">
@@ -35,6 +34,7 @@
                     {% endif %}
                     <h3>{{testimonial.full_name}}</h3>
                     <h4>{{testimonial.job_title}}</h4>
+                    <h4>{{testimonial.company}}</h4>
                   </div>
                 </div>
               </div><!-- End testimonial item -->

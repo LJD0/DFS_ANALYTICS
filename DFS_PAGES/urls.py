@@ -24,6 +24,7 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('new_review/', views.new_review, name='new_testimonial'),
     path('dfswelcome/', views.dfs_welcome, name='dfswelcome'),
+    path('expo_form/', views.dfs_expo, name='expo_form'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,75 +1,109 @@
 {% load static %}
 
-  <!-- ======= expo Section ======= -->
-  <section id="expo" class='expo d-flex align-items-center'>
+<!-- ======= expo Section ======= -->
+<section id="expo" class="expo d-flex align-items-center">
+    {% for info in expo_info %}
+
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-8">
-                <h1>Thanks for coming to see us! </h1>
-                <h2>We're excited to work with you!</h2>
+        <div class="row justify-content-center desktop-switch">
+            <div class="col-8 jutify-content-center">
+                <h1>{{info.page_title}}</h1>
             </div>
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
+            <div
+                class="col-lg-6 py-5 py-lg-0 order-lg-1 order-sm-1"
+                data-aos="fade-left">
 
-            <div class=" col-lg-6 py-5 py-lg-0 order-2 order-lg-1" data-aos="fade-left">
-                <div class="row ">
-                    <div class="col-5"><img src="{% static 'assets/img/DFS_noBG.png' %}" alt="" class="img-fluid float-left"></div>
-                    <div class="col-2">
-
-                        <h1>@</h1>
+                    <div class="desktop-switch">
+                        <br /><br />
                     </div>
-                    <div class="col-5"><img src="{% static 'assets/img/expo_logo.png' %}" alt="" class="img-fluid float-right"></div>
-                </div>
-                <br>
 
-                {% comment %} <a href="#" class="lightbox-trigger btn-get-started" title="Open Lightbox">Let's make your visions come true.</a> {% endcomment %}
+                    <div class="row justify-content-center">
+                        <div class="col-10">
+                            <img
+                                src="{{info.image.url}}"
+                                alt=""
+                                class="img-fluid float-left" />
+                        </div>
+
+                    </div>
+                    <br />
+
+                    <br />
+                    <div class="row justify-content-center">
+                        <div class="col-7">
+                            <div class="desktop-switch">
+                                <a
+                                    href="{% url 'expo_form' %}"
+                                    data-glightbox="width: 767; height: 1000;"
+                                    class="form-lightbox btn-get-started"
+                                    title="Your Title"
+                                    >{{info.button}}</a
+                                >
+                            </div>
+                            <div class="mobile-switch">
+                                <a
+                                href="{% url 'expo_form' %}"
+                                data-glightbox="width: 767; height: 1000;"
+                                class="form-lightbox btn-get-started"
+                                title="Your Title"
+                                >Expo NW Offer!</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+            <div
+                id="exponw"
+                class="col-lg-6 order-lg-2 order-sm-2 exponw desktop-switch"
+                data-aos="fade-right">
+
                 <div class="row justify-content-center">
-                    <div class="col-6"><a href="/" class="contact-form-trigger btn-get-started" title="Your Title">Click to Load HTML Content</a></div>
+                    <div class="col-12">
+                        {% comment %} <h1>{{info.video_title}}</h1> {% endcomment %}
+                    </div>
                 </div>
-
+                {% comment %} href="https://www.youtube.com/embed/tMA8I0R4Vyg" {% endcomment %}
+                <a
+                    href="{{info.video_link}}"
+                    data-gallery="exponwGallery"
+                    class="exponw-lightbox">
+                    <div class="exponw-item filter-card">
+                        <div class="exponw-wrap">
+                            <img
+                                src="{% static 'assets/img/dfs_thumbnail.png' %}"
+                                class="img-fluid"
+                                alt="" />
+                            <div class="exponw-info">
+                                <h4>{{info.video_title}}</h4>
+                                <p>{{info.video_subtitle}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                {% comment %} <h2>{{info.video_subtitle}}</h2> {% endcomment %}
             </div>
-
-            <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-right">
-
-                  <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
-
-
-        <a href="https://www.youtube.com/embed/tMA8I0R4Vyg" data-gallery="portfolioGallery" class="portfokio-lightbox">
-            <div class="portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                <img src="{% static 'assets/img/portfolio/portfolio-7.jpg' %}" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Card 1</h4>
-                  <p>Card</p>
-                  {% comment %} <div class="portfolio-links">
-                    <i class="bi bi-plus"></i>
-                    <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
-                  </div> {% endcomment %}
+            <div class="mobile-switch" data-aos='fade-right'>
+                <div class="row justify-content-center">
+                    <div class="col-8">
+                        <a
+                            href="{{info.video_link}}"
+                            data-gallery="exponwGallery"
+                            class="form-lightbox btn-get-started"
+                            title="Your Title"
+                            >View our video</a
+                        >
+                    </div>
                 </div>
-              </div>
             </div>
-        </a>
+        </div>
+        <!-- End Row -->
 
-  <!-- Hidden section that you want to display in the lightbox -->
-<div id="lightbox-content" style="display: none;">
-    <!-- Your content goes here -->
-    <h2>This is the content you want to display in the lightbox</h2>
-    <p>Any other HTML content can go here.</p>
-  </div>
+    </div>
+    <!-- End container -->
 
-
-      </section><!-- End Portfolio Section -->
-
-                {% comment %} <iframe width="560" height="315" src="https://www.youtube.com/embed/tMA8I0R4Vyg?si=mUBSDRjRvQLOpgpE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> {% endcomment %}
-                <!--<img src="{% static 'assets/img/expo-img.png' %}" class="img-fluid" alt="">-->
-            </div>
-
-        </div>   <!-- End Row -->
-
-
-    </div>  <!-- End container -->
-
-  </section>
-
-  <!-- End expo -->
+    {% endfor %}
+</section>
+<!-- End expo -->

@@ -175,3 +175,16 @@ class expo_info(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class expo_form(models.Model):
+    name = "Expo Form"
+    full_name = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    company = models.CharField(max_length=100)
+    phone = models.CharField(max_length=100)
+    how_heard = models.CharField(max_length=100,default='Expo West')    
+    package = models.CharField(max_length=100,choices=[('D/M Report','Demo/Merchandising Report'),('PEA','Promotion Efficacy Analysis'),])
+
+    def __str__(self):
+        return self.full_name

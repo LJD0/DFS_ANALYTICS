@@ -9,13 +9,17 @@
         <p>{{feature.services_tag}}</p>
       </header>
 
-      <div class="row">
+      <div class="row justify-content-center">
 
-        <div class="col-lg-6">
+        <div class="col-lg-6 mobile-switch order-lg-1 order-sm-1">
+          <img src="../../../static/assets/img/dfs_flow_down.png" class="img-fluid" alt="">
+        </div>
+
+        <div class="col-lg-6 desktop-switch order-lg-1 order-sm-1">
           <img src="{{feature.services_image.url}}" class="img-fluid" alt="">
         </div>
 
-        <div class="col-lg-6 mt-5 mt-lg-0 d-flex">
+        <div class="col-lg-6 mt-5 mt-lg-0 d-flex order-lg-2 order-sm-2">
           <div class="row align-self-center gy-4">
 
             <div class="col-md-6" data-aos="zoom-out" data-aos-delay="200">
@@ -67,7 +71,7 @@
 
       <!-- Feature Tabs -->
       <div class="row feture-tabs" data-aos="fade-up">
-        <div class="col-lg-6">
+        <div class="col-lg-6 order-lg-1 order-sm-2">
           <h3>{{feature.growth_title}}</h3>
 
           <!-- Tabs -->
@@ -148,8 +152,8 @@
 
         </div>
         <br>
-        <div class="col-lg-6">
-          <img style='width:75%;' src="{{feature.growth_image.url}}" class="img-fluid p-4" alt="">
+        <div class="col-lg-6 align-items-center order-lg-2 order-sm-1">
+          <img style='width:100%;' src="{{feature.growth_image.url}}" class="img-fluid p-4" alt="">
         </div>
 
       </div><!-- End Feature Tabs -->

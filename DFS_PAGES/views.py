@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from .models import Hero, AboutUs, Testimonials, Features, OurTeam, FAQ, Contact_Forms, Contact_Info, expo_info
+from .models import Hero, AboutUs, Testimonials, Features, OurTeam, FAQ, Contact_Forms, Contact_Info, expo_info, expo_form
 # Create your views here.
 def home(request):
     context = {
@@ -43,41 +43,32 @@ def contact (request):
     else:
         return render(request, 'homepage/elements/contact_page.html', context)
 
-def new_review (request):
-
-    context = {
-    }
-
-    if request.method == 'POST':
-        testimonial = Testimonials()
-        testimonial.full_name = request.POST['name']
-        testimonial.job_title = request.POST['job_title']
-        testimonial.stars = request.POST['stars']
-        testimonial.topic = request.POST['topic']
-        testimonial.review = request.POST['message']
-        testimonial.save()
-
-        messages.success(request,'Thank You', extra_tags='testimonial',)  # Add success message
-
-            # # Send email using Django's email function
-        # send_mail(
-        #     'RoughCutSolutions Contact Form Submission',
-        #     f'Subject: {contact.subject}\nName: {contact.name}\nEmail: {contact.email}\nMessage: {contact.message}',
-        #     contact.email,
-        #     ['larsenj2064@gmail.com'],
-        #     fail_silently=False,
-        # )
-        return HttpResponseRedirect("/")
-    else:
-        return render(request, 'homepage/elements/testimonials_page.html', context)
 
 
 def dfs_welcome (request):
     context = {
-        expo_info: expo_info.objects.all(),
+        'expo_info': expo_info.objects.all(),
     }
+ 
     return render(request, 'expo/expo_page.html', context)
 
+def dfs_expo (request):
+    context = {
+        expo_info: expo_info.objects.all(),
+    }
+
+    if request.method == 'POST':
+        exponw = expo_form()
+        exponw.full_name = request.POST['name']
+        exponw.email = request.POST['email']
+        exponw.company = request.POST['company']
+        exponw.phone = request.POST['phone']
+        exponw.package = request.POST['package']
+        exponw.save()
+        return HttpResponseRedirect("/")
+
+        messages.success(request,'Thank You', extra_tags='contact',)
+    return render(request, 'expo/expo_form_page.html', context)
 
 def new_review (request):
 
@@ -94,20 +85,6 @@ def new_review (request):
         testimonial.save()
 
         messages.success(request,'Thank You', extra_tags='testimonial',)  # Add success message
-
-
-        #export response and add to csv
-        import csv
-        from datetime import datetime 
-        from django.http import HttpResponse
-        response = HttpResponse(content_type='text/csv')
-        response['Content-Disposition'] = 'attachment; filename="testimonials.csv"'
-        writer = csv.writer(response)
-        writer.writerow(['Full Name', 'Job Title', 'Stars', 'Topic', 'Review', 'Date'])
-        writer.writerow([testimonial.full_name, testimonial.job_title, testimonial.stars, testimonial.topic, testimonial.review, datetime.now()])
-    
-
-    
         
         
         

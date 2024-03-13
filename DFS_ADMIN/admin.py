@@ -3,7 +3,7 @@ from django.contrib.admin import AdminSite
 
 from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin
-from DFS_PAGES.models import Hero, AboutUs, Testimonials, Features, OurTeam, FAQ, Contact_Forms, Contact_Info, expo_info
+from DFS_PAGES.models import Hero, AboutUs, Testimonials, Features, OurTeam, FAQ, Contact_Forms, Contact_Info, expo_info, expo_form
 # Register your models here.
 
 class DFS_AdminSite(AdminSite):
@@ -25,6 +25,14 @@ class TestimonialsAdmin(admin.ModelAdmin):
     ordering = ['created_at']
     list_per_page = 10
 
+class ExpoAdmin(admin.ModelAdmin):
+    list_display = ('full_name', 'email', 'company', 'package', 'phone', 'how_heard')
+    list_filter = ('full_name', 'email', 'company', 'package', 'phone', 'how_heard')
+    search_fields = ('full_name', 'email', 'company', 'package', 'phone', 'how_heard')
+    ordering = ['company']
+    list_per_page = 10
+
+
 dfs_admin = DFS_AdminSite(name='admin')
 dfs_admin.register(User, UserAdmin)
 dfs_admin.register(Hero)
@@ -36,5 +44,5 @@ dfs_admin.register(FAQ)
 dfs_admin.register(Contact_Forms, Contact_FormsAdmin)
 dfs_admin.register(Contact_Info)
 dfs_admin.register(expo_info)
-
+dfs_admin.register(expo_form, ExpoAdmin)
 
