@@ -779,6 +779,7 @@ section {
   line-height: 0;
   margin-right: 8px;
   color: #4154f1;
+  background-size: cover;
 }
 
 .features .feature-icons {
@@ -833,6 +834,11 @@ section {
   .mobile-switch {
     display: block;
   }
+}
+
+
+.presentation {
+  background-image: url('../img/presentation.svg');
 }
 
 /*--------------------------------------------------------------
