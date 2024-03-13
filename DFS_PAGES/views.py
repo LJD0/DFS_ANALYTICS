@@ -65,7 +65,7 @@ def dfs_expo (request):
         exponw.phone = request.POST['phone']
         exponw.package = request.POST['package']
         exponw.save()
-        return HttpResponseRedirect("/")
+        return HttpResponseRedirect("expo/expothanks.html")
 
         messages.success(request,'Thank You', extra_tags='contact',)
     return render(request, 'expo/expo_form_page.html', context)

@@ -1,0 +1,30 @@
+{% extends "homepage/base/base.html" %}
+
+{% load static %}
+{% block content %}
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="hero d-flex align-items-center">
+{% for hero in hero %}
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+          <img src="{% static 'assets/img/DFS_noBG_outline.png' %}" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-6 d-flex flex-column justify-content-center">
+            <h1 data-aos="fade-up">Thanks for getting in touch!</h1>
+            <h1 data-aos="fade-up">We will get back to you soon!</h1>
+          <h2 data-aos="fade-up" data-aos-delay="400">This page can be closed.</h2>
+          {% comment %} <div data-aos="fade-up" data-aos-delay="600">
+            <div class="text-center text-lg-start">
+              <a href="#about" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                <span>{{ hero.button }}</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div> {% endcomment %}
+        </div>
+      </div>
+    </div>
+{% endfor %}
+</section><!-- End Hero -->
+{% endblock content %}
