@@ -3,11 +3,16 @@
 
 {% load static %}
 {% block content %}
+
+{% if homepage.hero %}
 {% include "homepage/elements/hero.html" %}
+{% endif %}
 
   <main id="main">
-
+    {% if homepage.about_us %}
     {% include "homepage/elements/about.html" %}
+    {% endif %}
+
     {% include "homepage/elements/features.html" %}
 
     {% comment %} {% include "homepage/elements/values.html" %} {% endcomment %}
@@ -16,12 +21,15 @@
     {% comment %} {% include "homepage/elements/pricing.html" %} {% endcomment %}
     {% comment %} {% include "homepage/elements/faq.html" %} {% endcomment %}
     {% comment %} {% include "homepage/elements/portfolio.html" %} {% endcomment %}
+    {% if homepage.testimonials %}
     {% include "homepage/elements/testimonials.html" %}
+    {% endif %}
     {% comment %} {% include "homepage/elements/team.html" %} {% endcomment %}
     {% comment %} {% include "homepage/elements/clients.html" %} {% endcomment %}
     {% comment %} {% include "homepage/elements/blog.html" %} {% endcomment %}
+    {% if homepage.contact %}
     {% include "homepage/elements/contact.html" %}
-
+    {% endif %}
 
   </main><!-- End #main -->
   {% endblock content %}

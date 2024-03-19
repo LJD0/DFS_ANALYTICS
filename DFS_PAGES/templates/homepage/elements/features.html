@@ -1,12 +1,12 @@
 {% load static %}
    <!-- ======= Features Section ======= -->
    <section id="features" class="features">
-{% for feature in features %}
     <div class="container" data-aos="fade-up">
-
+      {% if homepage.services %}
+      {% for service in services %}
       <header class="section-header">
         {% comment %} <h2></h2> {% endcomment %}
-        <p>{{feature.services_tag}}</p>
+        <p>{{service.services_tag}}</p>
       </header>
 
       <div class="row justify-content-center">
@@ -16,7 +16,7 @@
         </div>
 
         <div class="col-lg-6 desktop-switch order-lg-1 order-sm-1">
-          <img src="{{feature.services_image.url}}" class="img-fluid" alt="">
+          <img src="{{service.services_image.url}}" class="img-fluid" alt="">
         </div>
 
         <div class="col-lg-6 mt-5 mt-lg-0 d-flex order-lg-2 order-sm-2">
@@ -25,66 +25,69 @@
             <div class="col-md-6" data-aos="zoom-out" data-aos-delay="200">
               <div class="feature-box d-flex align-items-center">
                 <i class="bi bi-check"></i>
-                <h3>{{feature.services_1}}</h3>
+                <h3>{{service.services_1}}</h3>
               </div>
             </div>
 
             <div class="col-md-6" data-aos="zoom-out" data-aos-delay="300">
               <div class="feature-box d-flex align-items-center">
                 <i class="bi bi-check"></i>
-                <h3>{{feature.services_2}}</h3>
+                <h3>{{service.services_2}}</h3>
               </div>
             </div>
 
             <div class="col-md-6" data-aos="zoom-out" data-aos-delay="400">
               <div class="feature-box d-flex align-items-center">
                 <i class="bi bi-check"></i>
-                <h3>{{feature.services_3}}</h3>
+                <h3>{{service.services_3}}</h3>
               </div>
             </div>
 
             <div class="col-md-6" data-aos="zoom-out" data-aos-delay="500">
               <div class="feature-box d-flex align-items-center">
                 <i class="bi bi-check"></i>
-                <h3>{{feature.services_4}}</h3>
+                <h3>{{service.services_4}}</h3>
               </div>
             </div>
 
             <div class="col-md-6" data-aos="zoom-out" data-aos-delay="600">
               <div class="feature-box d-flex align-items-center">
                 <i class="bi bi-check"></i>
-                <h3>{{feature.services_5}}</h3>
+                <h3>{{service.services_5}}</h3>
               </div>
             </div>
 
             <div class="col-md-6" data-aos="zoom-out" data-aos-delay="700">
               <div class="feature-box d-flex align-items-center">
                 <i class="bi bi-check"></i>
-                <h3>{{feature.services_6}}</h3>
+                <h3>{{service.services_6}}</h3>
               </div>
             </div>
 
           </div>
         </div>
 
-      </div> <!-- / row -->
-
+      </div> <!-- / services row -->
+      {% endfor %}
+      {% endif %}
+      {% if homepage.tabs %}
+      {% for tab in tabs %}
       <!-- Feature Tabs -->
       <div class="row feture-tabs" data-aos="fade-up">
         <div class="col-lg-6 order-lg-1 order-sm-2">
-          <h3>{{feature.growth_title}}</h3>
+          <h3>{{tab.tabs_title}}</h3>
 
           <!-- Tabs -->
           <ul class="nav nav-pills mb-3">
             <li>
-              <a class="nav-link active" data-bs-toggle="pill" href="#tab1">{{feature.growth_tab1_name}}</a>
+              <a class="nav-link active" data-bs-toggle="pill" href="#tab1">{{tab.tabs_tab1}}</a>
             </li>
             <li>
-              <a class="nav-link" data-bs-toggle="pill" href="#tab2">{{feature.growth_tab2_name}}</a>
+              <a class="nav-link" data-bs-toggle="pill" href="#tab2">{{tab.tabs_tab2}}</a>
             </li>
             {% if tab3 %}
             <li>
-              <a class="nav-link" data-bs-toggle="pill" href="#tab3">{{feature.growth_tab3_name}}</a>
+              <a class="nav-link" data-bs-toggle="pill" href="#tab3">{{tab.tabs_tab3}}</a>
             </li>
             {% endif %}
           </ul><!-- End Tabs -->
@@ -93,354 +96,96 @@
           <div class="tab-content">
 
             <div class="tab-pane fade show active" id="tab1">
-              <p>{{feature.growth_tab1_blurb1}}</p>
+              <p>{{tab.tabs_tab1_text}}</p>
               <div class="d-flex align-items-center mb-2">
                 <i class="bi bi-check2"></i>
-                <h4>{{feature.growth_tab1_title1}}</h4>
+                <h4>{{tab.tabs_tab1_bullet1}}</h4>
               </div>
-              <p>{{feature.growth_tab1_blurb2}}</p>
+              <p>{{tab.tabs_tab1_bullet_blurb1}}</p>
               <div class="d-flex align-items-center mb-2">
                 <i class="bi bi-check2"></i>
-                <h4>{{feature.growth_tab1_title2}}</h4>
+                <h4>{{tab.tabs_tab1_bullet2}}</h4>
               </div>
-              <p>{{feature.growth_tab1_blurb3}}</p>
+              <p>{{tab.tabs_tab1_bullet_blurb2}}</p>
               
               <div class="d-flex align-items-center mb-2">
                 <i class="bi bi-check2"></i>
-                <h4>{{feature.growth_tab1_title3}}</h4>
+                <h4>{{tab.tabs_tab1_bullet3}}</h4>
               </div>
-              <p>{{feature.growth_tab1_blurb4}}</p>
+              <p>{{tab.tabs_tab1_bullet_blurb3}}</p>
 
             </div><!-- End Tab 1 Content -->
 
             <div class="tab-pane fade show" id="tab2">
-              <p>{{feature.growth_tab2_blurb1}}</p>
+              <p>{{tab.tabs_tab2_text}}</p>
               <div class="d-flex align-items-center mb-2">
                 <i class="bi bi-check2"></i>
-                <h4>{{feature.growth_tab2_title1}}</h4>
+                <h4>{{tab.tabs_tab2_bullet1}}</h4>
               </div>
-              <p>{{feature.growth_tab2_blurb2}}</p>
+              <p>{{tab.tabs_tab1_bullet_blurb1}}</p>
               <div class="d-flex align-items-center mb-2">
                 <i class="bi bi-check2"></i>
-                <h4>{{feature.growth_tab2_title2}}</h4>
+                <h4>{{tab.tabs_tab2_bullet2}}</h4>
               </div>
-              <p>{{feature.growth_tab2_blurb3}}</p>
+              <p>{{tab.tabs_tab1_bullet_blurb2}}</p>
               <div class="d-flex align-items-center mb-2">
                 <i class="bi bi-check2"></i>
-                <h4>{{feature.growth_tab2_title3}}</h4>
+                <h4>{{tab.tabs_tab2_bullet3}}</h4>
               </div>
-              <p>{{feature.growth_tab2_blurb4}}</p>
+              <p>{{tab.tabs_tab1_bullet_blurb3}}</p>
             </div><!-- End Tab 2 Content -->
 
             {% if tab3 %}
             <div class="tab-pane fade show" id="tab3">
-              <p>{{feature.growth_tab3_blurb1}}</p>
+              <p>{{tab.tabs_tab3_text}}</p>
               <div class="d-flex align-items-center mb-2">
                 <i class="bi bi-check2"></i>
-                <h4>{{feature.growth_tab3_title1}}</h4>
+                <h4>{{tab.tabs_tab3_bullet1}}</h4>
               </div>
-              <p>{{feature.growth_tab3_blurb2}}</p>
+              <p>{{tab.tabs_tab3_bullet_blurb1}}</p>
               <div class="d-flex align-items-center mb-2">
                 <i class="bi bi-check2"></i>
-                <h4>{{feature.growth_tab3_title2}}</h4>
+                <h4>{{tab.tabs_tab3_bullet2}}</h4>
               </div>
-              <p>{{feature.growth_tab3_blurb3}}</p>
+              <p>{{tab.tabs_tab3_bullet_blurb2}}</p>
               
             </div><!-- End Tab 3 Content -->
             {% endif %}
           </div>
-
         </div>
         <br>
         <div class="col-lg-6 align-items-center order-lg-2 order-sm-1">
-          <img style='width:100%;' src="{{feature.growth_image.url}}" class="img-fluid p-4" alt="">
+          <img style='width:100%;' src="{{tab.tabs_image.url}}" class="img-fluid p-4" alt="">
         </div>
-
       </div><!-- End Feature Tabs -->
-
+      {% endfor %}
+      {% endif %}
+      {% if homepage.solutions %}
+      {% for solution in solutions %}
       <!-- Feature Icons -->
       <div class="row feature-icons" data-aos="fade-up">
-        <h3>{{feature.tools_title}}</h3>
-
+        <h3>{{solution.solutions_title}}</h3>
         <div class="row">
-
           <div class="col-xl-4 text-center" data-aos="fade-right" data-aos-delay="100">
-            <img style='width:100%;' src="{{feature.tools_image.url}}" class="img-fluid" alt="">
+            <img style='width:100%;' src="{{solution.solutions_image.url}}" class="img-fluid" alt="">
           </div>
           <br>
           <div class="col-xl-8 d-flex content">
             <div class="row align-self-center gy-4">
-
-              <div class="col-md-6 icon-box" data-aos="fade-up">
-                <i class="presentation"></i>
-                <div>
-                  <h4>{{feature.tools_item1}}</h4>
-                  <p>{{feature.tools_item1_blurb}}</p>
-                </div>
-              </div>
-
-              <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-                <i class="ri-stack-line"></i>
-                <div>
-                  <h4>{{feature.tools_item2}}</h4>
-                  <p>{{feature.tools_item2_blurb}}</p>
-                </div>
-              </div>
-
-              <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-                <i class="ri-brush-4-line"></i>
-                <div>
-                  <h4>{{feature.tools_item3}}</h4>
-                  <p>{{feature.tools_item3_blurb}}</p>
-                </div>
-              </div>
-
-              <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-                <i class="ri-magic-line"></i>
-                <div>
-                  <h4>{{feature.tools_item4}}</h4>
-                  <p>{{feature.tools_item4_blurb}}</p>
-                </div>
-              </div>
-
-              <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-                <i class="ri-command-line"></i>
-                <div>
-                  <h4>{{feature.tools_item5}}</h4>
-                  <p>{{feature.tools_item5_blurb}}</p>
-                </div>
-              </div>
-
-              <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
-                <i class="ri-radar-line"></i>
-                <div>
-                  <h4>{{feature.tools_item6}}</h4>
-                  <p>{{feature.tools_item6_blurb}}</p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-
-      </div><!-- End Feature Icons -->
-
-    </div>
-{% endfor %}
-  </section><!-- End Features Section -->
-
-{% comment "old stuff" %}
-{% load static %}
-   <!-- ======= Features Section ======= -->
-   <section id="features" class="features">
-
-    <div class="container" data-aos="fade-up">
-
-      <header class="section-header">
-        <h2>Accessible Insights and support</h2>
-        <p>At every stage of your journey.</p>
-      </header>
-
-      <div class="row">
-
-        <div class="col-lg-6">
-          <img src="{% static 'assets/img/features.png' %}" class="img-fluid" alt="">
-        </div>
-
-        <div class="col-lg-6 mt-5 mt-lg-0 d-flex">
-          <div class="row align-self-center gy-4">
-
-            <div class="col-md-6" data-aos="zoom-out" data-aos-delay="200">
-              <div class="feature-box d-flex align-items-center">
-                <i class="bi bi-check"></i>
-                <h3>Data Management</h3>
-              </div>
-            </div>
-
-            <div class="col-md-6" data-aos="zoom-out" data-aos-delay="300">
-              <div class="feature-box d-flex align-items-center">
-                <i class="bi bi-check"></i>
-                <h3>Sales Analytics</h3>
-              </div>
-            </div>
-
-            <div class="col-md-6" data-aos="zoom-out" data-aos-delay="400">
-              <div class="feature-box d-flex align-items-center">
-                <i class="bi bi-check"></i>
-                <h3>Revenue Projections</h3>
-              </div>
-            </div>
-
-            <div class="col-md-6" data-aos="zoom-out" data-aos-delay="500">
-              <div class="feature-box d-flex align-items-center">
-                <i class="bi bi-check"></i>
-                <h3>Demand Planning</h3>
-              </div>
-            </div>
-
-            <div class="col-md-6" data-aos="zoom-out" data-aos-delay="600">
-              <div class="feature-box d-flex align-items-center">
-                <i class="bi bi-check"></i>
-                <h3>Inventory Management</h3>
-              </div>
-            </div>
-
-            <div class="col-md-6" data-aos="zoom-out" data-aos-delay="700">
-              <div class="feature-box d-flex align-items-center">
-                <i class="bi bi-check"></i>
-                <h3>Distribution Efficacy</h3>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div> <!-- / row -->
-
-      <!-- Feature Tabs -->
-      <div class="row feture-tabs" data-aos="fade-up">
-        <div class="col-lg-6">
-          <h3>Tailored to Your Growth</h3>
-
-          <!-- Tabs -->
-          <ul class="nav nav-pills mb-3">
-            <li>
-              <a class="nav-link active" data-bs-toggle="pill" href="#tab1">Market Analysis</a>
-            </li>
-            <li>
-              <a class="nav-link" data-bs-toggle="pill" href="#tab2">Consumer Trends</a>
-            </li>
-            <li>
-              <a class="nav-link" data-bs-toggle="pill" href="#tab3">Competitive Strategies</a>
-            </li>
-          </ul><!-- End Tabs -->
-
-          <!-- Tab Content -->
-          <div class="tab-content">
-
-            <div class="tab-pane fade show active" id="tab1">
-              <p>Gain insights into market dynamics and opportunities to make informed decisions. Understand consumer preferences and behaviors to tailor your strategies effectively.</p>
-              <div class="d-flex align-items-center mb-2">
-                <i class="bi bi-check2"></i>
-                <h4>Comprehensive Market Analysis</h4>
-              </div>
-              <p>Identify emerging trends and anticipate shifts in consumer demand to stay ahead of the curve.</p>
-              <div class="d-flex align-items-center mb-2">
-                <i class="bi bi-check2"></i>
-                <h4>In-Depth Consumer Insights</h4>
-              </div>
-              <p>Analyze competitor strategies and market positioning to refine your own approach and gain a competitive edge.</p>
-            </div><!-- End Tab 1 Content -->
-
-            <div class="tab-pane fade show" id="tab2">
-              <p>Understand consumer preferences and behaviors to tailor your strategies effectively. Discover emerging trends and adapt your offerings to meet evolving consumer demands.</p>
-              <div class="d-flex align-items-center mb-2">
-                <i class="bi bi-check2"></i>
-                <h4>Consumer Behavior Analysis</h4>
-              </div>
-              <p>Gain insights into consumer motivations and preferences to enhance product development and marketing efforts.</p>
-              <div class="d-flex align-items-center mb-2">
-                <i class="bi bi-check2"></i>
-                <h4>Trend Identification</h4>
-              </div>
-              <p>Stay informed about the latest industry trends and consumer preferences to maintain relevance and drive growth.</p>
-            </div><!-- End Tab 2 Content -->
-
-            <div class="tab-pane fade show" id="tab3">
-              <p>Explore competitor strategies and market positioning to refine your own approach and identify areas for differentiation. Understand market dynamics and competitive threats to develop effective strategies.</p>
-              <div class="d-flex align-items-center mb-2">
-                <i class="bi bi-check2"></i>
-                <h4>Competitor Analysis</h4>
-              </div>
-              <p>Identify key competitors and assess their strengths and weaknesses to inform strategic decision-making.</p>
-              <div class="d-flex align-items-center mb-2">
-                <i class="bi bi-check2"></i>
-                <h4>Market Positioning</h4>
-              </div>
-              <p>Define your unique value proposition and positioning to stand out in the market and attract target consumers.</p>
-            </div><!-- End Tab 3 Content -->
-
-          </div>
-
-        </div>
-
-        <div class="col-lg-6">
-          <img src="{% static 'assets/img/features-2.png' %}" class="img-fluid" alt="">
-        </div>
-
-      </div><!-- End Feature Tabs -->
-
-      <!-- Feature Icons -->
-      <div class="row feature-icons" data-aos="fade-up">
-        <h3>With all the tools you need</h3>
-
-        <div class="row">
-
-          <div class="col-xl-4 text-center" data-aos="fade-right" data-aos-delay="100">
-            <img src="{% static 'assets/img/features-3.png' %}" class="img-fluid p-4" alt="">
-          </div>
-
-          <div class="col-xl-8 d-flex content">
-            <div class="row align-self-center gy-4">
-
+              {% for item in solution.solutions_items.all %}
               <div class="col-md-6 icon-box" data-aos="fade-up">
                 <i class="ri-line-chart-line"></i>
                 <div>
-                  <h4>Comprehensive charts</h4>
-                  <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                  <h4>{{item.solutions_item}}</h4>
+                  <p>{{item.solutions_item_blurb}}</p>
                 </div>
               </div>
-
-              <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-                <i class="ri-stack-line"></i>
-                <div>
-                  <h4>Database ETL</h4>
-                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
-                </div>
-              </div>
-
-              <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-                <i class="ri-brush-4-line"></i>
-                <div>
-                  <h4>Presentation graphics</h4>
-                  <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
-                </div>
-              </div>
-
-              <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-                <i class="ri-magic-line"></i>
-                <div>
-                  <h4>Actionable Insights</h4>
-                  <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
-                </div>
-              </div>
-
-              <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-                <i class="ri-command-line"></i>
-                <div>
-                  <h4>Decades of experience</h4>
-                  <p>Et fuga et deserunt et enim. Dolorem architecto ratione tensa raptor marte</p>
-                </div>
-              </div>
-
-              <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
-                <i class="ri-radar-line"></i>
-                <div>
-                  <h4>Unparalleled Support</h4>
-                  <p>Est autem dicta beatae suscipit. Sint veritatis et sit quasi ab aut inventore</p>
-                </div>
-              </div>
-
+              {% endfor %}
             </div>
           </div>
-
         </div>
-
       </div><!-- End Feature Icons -->
-
+      {% endfor %}
+      {% endif %}
     </div>
-
   </section><!-- End Features Section -->
-
-{% endcomment %}

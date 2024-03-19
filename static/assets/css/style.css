@@ -838,7 +838,10 @@ section {
 
 
 .presentation {
-  background-image: url('../img/presentation.svg');
+  font-size: 44px;
+  line-height: 44px;
+  color: #0245bc;
+  margin-right: 15px;
 }
 
 /*--------------------------------------------------------------

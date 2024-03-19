@@ -1,17 +1,22 @@
 from django.shortcuts import render
 from django.contrib import messages
-from django.http import HttpResponseRedirect
-from .models import Hero, AboutUs, Testimonials, Features, OurTeam, FAQ, Contact_Forms, Contact_Info, expo_info, expo_form
+from django.http import HttpResponseRedirect, HttpResponse
+from .models import Hero, AboutUs, Testimonials, OurTeam, FAQ, Contact_Forms, Contact_Info, expo_info, expo_form, HomePage, Services, Tabs, Solutions, solutions_item
+import csv
 # Create your views here.
 def home(request):
     context = {
         'hero': Hero.objects.all(),
         'about_us': AboutUs.objects.all(),
+        'services': Services.objects.all(),
+        'tabs': Tabs.objects.all(),
+        'solutions': Solutions.objects.all(),
+        'solutions_item': solutions_item.objects.all(),
         'testimonials': Testimonials.objects.all(),
         'our_team': OurTeam.objects.all(),
         'faqs': FAQ.objects.all(),
-        'features' : Features.objects.all(),
         'contact_info': Contact_Info.objects.all(),
+        'homepage': HomePage.objects.first(),
     }
     return render(request, 'homepage/index.html', context)
 
@@ -102,3 +107,20 @@ def new_review (request):
         return HttpResponseRedirect("/")
     else:
         return render(request, 'homepage/elements/testimonials_page.html', context)
+
+def download_model_csv(request):
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="expo_data.csv"'
+
+    writer = csv.writer(response)
+    
+    # Get column names from the model
+    model_fields = [field.name for field in expo_form._meta.fields]
+    writer.writerow(model_fields)
+
+    # Get data from the model
+    queryset = expo_form.objects.all()
+    for obj in queryset:
+        writer.writerow([getattr(obj, field) for field in model_fields])
+
+    return response

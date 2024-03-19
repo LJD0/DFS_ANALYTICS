@@ -3,7 +3,7 @@ from django.contrib.admin import AdminSite
 
 from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin
-from DFS_PAGES.models import Hero, AboutUs, Testimonials, Features, OurTeam, FAQ, Contact_Forms, Contact_Info, expo_info, expo_form
+from DFS_PAGES.models import Hero, AboutUs, Testimonials, OurTeam, FAQ, Contact_Forms, Contact_Info, expo_info, expo_form, HomePage, Services, Tabs, Solutions, solutions_item
 # Register your models here.
 
 class DFS_AdminSite(AdminSite):
@@ -35,10 +35,14 @@ class ExpoAdmin(admin.ModelAdmin):
 
 dfs_admin = DFS_AdminSite(name='admin')
 dfs_admin.register(User, UserAdmin)
+dfs_admin.register(HomePage)
 dfs_admin.register(Hero)
 dfs_admin.register(AboutUs)
+dfs_admin.register(Services)
+dfs_admin.register(Tabs)
+dfs_admin.register(Solutions)
+dfs_admin.register(solutions_item)
 dfs_admin.register(Testimonials, TestimonialsAdmin)
-dfs_admin.register(Features)
 dfs_admin.register(OurTeam)
 dfs_admin.register(FAQ)
 dfs_admin.register(Contact_Forms, Contact_FormsAdmin)
