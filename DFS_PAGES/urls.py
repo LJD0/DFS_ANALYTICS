@@ -26,7 +26,7 @@ urlpatterns = [
     path('dfswelcome/', views.dfs_welcome, name='dfswelcome'),
     path('expo_form/', views.dfs_expo, name='expo_form'),
     path('expothanks/', views.thankspage, name='expothanks'),
-    path('download-csv/', views.download_model_csv, name='download-csv'),
+    path('download-csv/', views.redirect_to_download, name='download-csv'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

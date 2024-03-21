@@ -94,3 +94,17 @@ def get_range(value):
     except:
         value = 10        
         return range(value)
+
+@register.filter(name='read_svg_file')
+def read_svg_file(field_file):
+    try:
+        file_path = field_file.path
+        with open(file_path, 'r') as file:
+            svg_content = file.read()
+        # Modify the SVG content to update width, height, and viewBox attributes
+        svg_content = re.sub(r'(<svg\s[^>]*?)(width="[^"]*")', r'\1width="100%"', svg_content)
+        svg_content = re.sub(r'(<svg\s[^>]*?)(height="[^"]*")', r'\1height="100%"', svg_content)
+        svg_content = re.sub(r'(<svg\s[^>]*?)(viewBox="[^"]*")', r'\1viewBox="0 0 212.5 212.5"', svg_content)
+        return svg_content
+    except FileNotFoundError:
+        return ''  # Return an empty string if file not found

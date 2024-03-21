@@ -836,7 +836,17 @@ section {
   }
 }
 
+.features .feature-icons .content .icon-box svg {
+  font-size: 44px;
+  line-height: 44px;
+  color: #0245bc;
+  margin-right: 15px;
+  fill: #0245bc;
+}
 
+.features .feature-icons .content .icon-box svg g path {
+  fill: #0245bc;
+}
 .presentation {
   font-size: 44px;
   line-height: 44px;

@@ -185,7 +185,7 @@ class solutions_item(models.Model):
     name = "Solutions item"
     solutions_item = models.CharField(max_length=100)
     solutions_item_blurb = models.CharField(max_length=500)
-    solutions_item_icon = models.CharField(max_length=100)
+    solutions_item_icon = models.FileField(upload_to='')
     def __str__(self):
         return self.solutions_item
 

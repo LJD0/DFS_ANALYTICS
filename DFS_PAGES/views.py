@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.apps import apps
 from django.contrib import messages
 from django.http import HttpResponseRedirect, HttpResponse
 from .models import Hero, AboutUs, Testimonials, OurTeam, FAQ, Contact_Forms, Contact_Info, expo_info, expo_form, HomePage, Services, Tabs, Solutions, solutions_item
@@ -108,19 +109,27 @@ def new_review (request):
     else:
         return render(request, 'homepage/elements/testimonials_page.html', context)
 
-def download_model_csv(request):
+def download_model_csv(request, model):
     response = HttpResponse(content_type='text/csv')
-    response['Content-Disposition'] = 'attachment; filename="expo_data.csv"'
+    response['Content-Disposition'] = 'attachment; filename="{}_data.csv"'.format(model.__name__)
 
     writer = csv.writer(response)
     
     # Get column names from the model
-    model_fields = [field.name for field in expo_form._meta.fields]
+    model_fields = [field.name for field in model._meta.fields]
     writer.writerow(model_fields)
 
     # Get data from the model
-    queryset = expo_form.objects.all()
+    queryset = model.objects.all()
     for obj in queryset:
         writer.writerow([getattr(obj, field) for field in model_fields])
 
     return response
+
+def redirect_to_download(request):
+    model_name = request.GET.get('model')
+    if model_name:
+        model = apps.get_model(app_label='DFS_PAGES', model_name=model_name)
+        if model:
+            return download_model_csv(request, model)
+    return redirect(reverse('expothanks'))
