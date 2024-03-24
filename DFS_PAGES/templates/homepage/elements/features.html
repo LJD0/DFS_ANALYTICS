@@ -74,9 +74,12 @@
       {% for tab in tabs %}
       <!-- Feature Tabs -->
       <div class="row feture-tabs" data-aos="fade-up">
+        <h3>{{tab.tabs_title}}</h3>
+        <div class="col-lg-6 align-items-center order-lg-2 order-sm-1">
+          <img style='width:100%;' src="{{tab.tabs_image.url}}" class="img-fluid p-4" alt="">
+        </div>
         <div class="col-lg-6 order-lg-1 order-sm-2">
-          <h3>{{tab.tabs_title}}</h3>
-
+          
           <!-- Tabs -->
           <ul class="nav nav-pills mb-3">
             <li>
@@ -154,9 +157,6 @@
           </div>
         </div>
         <br>
-        <div class="col-lg-6 align-items-center order-lg-2 order-sm-1">
-          <img style='width:100%;' src="{{tab.tabs_image.url}}" class="img-fluid p-4" alt="">
-        </div>
       </div><!-- End Feature Tabs -->
       {% endfor %}
       {% endif %}

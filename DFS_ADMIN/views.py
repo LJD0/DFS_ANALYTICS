@@ -2,13 +2,24 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.views import LoginView, PasswordResetView, PasswordChangeView, PasswordResetConfirmView
 from DFS_ADMIN.forms import RegistrationForm, LoginForm, UserPasswordResetForm, UserSetPasswordForm, UserPasswordChangeForm
 from django.contrib.auth import logout
+from DFS_PAGES.models import HomePage
+from django.contrib.admin.models import LogEntry, CHANGE
+from django.contrib.contenttypes.models import ContentType
 
 # Create your views here.
 
 # Pages
 def index(request):
+  #get home page data
+  home_page = HomePage.objects.first()
+  opts = home_page._meta
+  context = {
+    'segment': 'index',
+    'home_page' : home_page,
+    'opts': opts,
+  }
 
-  return render(request, 'pages/index.html', { 'segment': 'index' })
+  return render(request, 'pages/index.html', context)
 
 def billing(request):
   return render(request, 'pages/billing.html', { 'segment': 'billing' })

@@ -12,6 +12,9 @@
   <div class="col-xl-12 col-sm-12 mb-xl-0 mb-4 p-1">
     <div class="card">
       <div class="card-body p-3">
+        {% comment %} <div class="row">
+          {% include 'admin/change_form.html' with instance=home_page%}
+        </div> {% endcomment %}
         <div class="row">
           <div class="col-8">
             <div class="numbers">
@@ -35,10 +38,11 @@
                         <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
                       </div>
                     </div>
-                    <div class="col-9">
+                    
+                    <div class="col-9 m-2">
                       <div class="numbers">
                         <h5 class="font-weight-bolder mb-0">
-                          Set Home page Visibility
+                          Toggle Home Page
                         </h5>
                       </div>
                     </div>
@@ -47,7 +51,9 @@
               </div>
             </a>
           </div>
+
         </div>
+
       </div>
     </div>
   </div>
@@ -271,11 +277,11 @@
                 <div class="card-body p-3">
                   <div class="row">
                     <div class="col-3 text-end">
-                      <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                        <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
+                      <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-xl">
+                        <i class="bx bx-download text-lg opacity-10" aria-hidden="true"></i>
                       </div>
                     </div>
-                    <div class="col-9">
+                    <div class="col-lg-9 col-sm-12 m-2">
                       <div class="numbers">
                         <h5 class="font-weight-bolder mb-0">
                           Download Contact Forms
@@ -298,7 +304,7 @@
                         <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
                       </div>
                     </div>
-                    <div class="col-9">
+                    <div class="col-lg-9 col-sm-12 m-2">
                       <div class="numbers">
                         <h5 class="font-weight-bolder mb-0">
                           Download Testimonial Forms
@@ -321,7 +327,7 @@
                         <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
                       </div>
                     </div>
-                    <div class="col-9">
+                    <div class="col-lg-9 col-sm-12 m-2">
                       <div class="numbers">
                         <h5 class="font-weight-bolder mb-0">
                           Download Expo Contact Forms
